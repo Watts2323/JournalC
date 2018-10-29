@@ -12,13 +12,13 @@
         <!--Root View Controller-->
         <scene sceneID="zdO-ly-Yj1">
             <objects>
-                <tableViewController id="mFe-Ob-evQ" sceneMemberID="viewController">
+                <tableViewController id="mFe-Ob-evQ" customClass="EntryListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bLF-TI-ZU4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Biu-rS-aGO" detailTextLabel="1Nh-rX-ea5" style="IBUITableViewCellStyleValue1" id="ybr-GN-bsH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="journalCell" textLabel="Biu-rS-aGO" detailTextLabel="1Nh-rX-ea5" style="IBUITableViewCellStyleValue1" id="ybr-GN-bsH">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ybr-GN-bsH" id="dLN-32-6bl">
@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="76" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail View Controller-->
         <scene sceneID="CAM-LB-z5i">
             <objects>
-                <viewController id="plu-7v-h3P" sceneMemberID="viewController">
+                <viewController id="plu-7v-h3P" customClass="EntryDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w9a-ML-2jD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
