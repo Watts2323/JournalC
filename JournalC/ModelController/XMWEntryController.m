@@ -13,13 +13,13 @@
 @implementation XMWEntryController
 
 //Shared Instance
-+ (XMWEntryController *) shared {
-    static XMWEntryController *shared = nil;
++ (XMWEntryController *) sharedInstance {
+    static XMWEntryController *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shared = [XMWEntryController new];
+        sharedInstance = [XMWEntryController new];
     });
-    return shared;
+    return sharedInstance;
 }
 
 -(instancetype)init

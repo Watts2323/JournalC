@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "XMWEntry.h"
 
-NS_ASSUME_NONNULL_BEGIN
+//NS_ASSUME_NONNULL_BEGIN
 
 @interface XMWEntryController : NSObject
 
@@ -28,4 +28,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END
+//NS_ASSUME_NONNULL_END

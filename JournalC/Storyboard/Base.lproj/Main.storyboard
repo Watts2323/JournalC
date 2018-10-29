@@ -41,6 +41,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="plu-7v-h3P" kind="show" identifier="toShowEntry" id="RTb-w2-hCz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -51,16 +54,20 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="WX8-DL-c3R">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bAW-oO-1zL">
                             <connections>
+                                <action selector="addButtonTapped:" destination="mFe-Ob-evQ" id="De0-TD-SYt"/>
                                 <segue destination="plu-7v-h3P" kind="show" identifier="toAddEntry" id="NG3-Fg-ssx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="bAW-oO-1zL" id="gaN-yV-s0n"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7Z-0A-4WW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="76" y="143"/>
         </scene>
-        <!--Entry Detail View Controller-->
+        <!--Title-->
         <scene sceneID="CAM-LB-z5i">
             <objects>
                 <viewController id="plu-7v-h3P" customClass="EntryDetailViewController" sceneMemberID="viewController">
@@ -68,31 +75,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Journal Name Here" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtX-jH-LgO">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Journal Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZtX-jH-LgO">
                                 <rect key="frame" x="16" y="87" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="in5-Xi-zS7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="in5-Xi-zS7">
                                 <rect key="frame" x="16" y="159" width="343" height="346"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWv-II-KSI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWv-II-KSI">
                                 <rect key="frame" x="167" y="512" width="41" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="plu-7v-h3P" eventType="touchUpInside" id="ucd-T2-uBF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aWv-II-KSI" firstAttribute="top" secondItem="in5-Xi-zS7" secondAttribute="bottom" constant="7" id="3hr-g4-OS1"/>
+                            <constraint firstItem="in5-Xi-zS7" firstAttribute="top" secondItem="w9a-ML-2jD" secondAttribute="topMargin" constant="95" id="IxS-60-Iq0"/>
+                            <constraint firstItem="ZtX-jH-LgO" firstAttribute="leading" secondItem="foU-fA-BK5" secondAttribute="leading" constant="16" id="LpS-bb-rgQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="aWv-II-KSI" secondAttribute="bottom" constant="122" id="Rce-Xx-Rra"/>
+                            <constraint firstItem="aWv-II-KSI" firstAttribute="top" secondItem="in5-Xi-zS7" secondAttribute="bottom" constant="7" id="XJH-Fz-K0E"/>
+                            <constraint firstItem="in5-Xi-zS7" firstAttribute="leading" secondItem="ZtX-jH-LgO" secondAttribute="leading" id="Z49-ih-X6J"/>
+                            <constraint firstItem="in5-Xi-zS7" firstAttribute="leading" secondItem="foU-fA-BK5" secondAttribute="leading" constant="16" id="ci5-GO-x2f"/>
+                            <constraint firstItem="ZtX-jH-LgO" firstAttribute="top" secondItem="foU-fA-BK5" secondAttribute="top" constant="23" id="dOo-9q-2Pd"/>
+                            <constraint firstItem="in5-Xi-zS7" firstAttribute="trailing" secondItem="ZtX-jH-LgO" secondAttribute="trailing" id="f1m-Wz-BAd"/>
+                            <constraint firstItem="foU-fA-BK5" firstAttribute="trailing" secondItem="ZtX-jH-LgO" secondAttribute="trailing" constant="16" id="k4S-wO-oes"/>
+                            <constraint firstItem="aWv-II-KSI" firstAttribute="leading" secondItem="w9a-ML-2jD" secondAttribute="leadingMargin" constant="151" id="kLj-BP-aRl"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="aWv-II-KSI" secondAttribute="trailing" id="ukR-ZF-19V"/>
+                            <constraint firstItem="foU-fA-BK5" firstAttribute="trailing" secondItem="in5-Xi-zS7" secondAttribute="trailing" constant="16" id="vPm-9d-1xl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="foU-fA-BK5"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="da5-T1-3xi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="K1K-QY-Dwn">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="plu-7v-h3P" id="MLP-Go-y8l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="clearButton" destination="aWv-II-KSI" id="kVr-tG-x8g"/>
+                        <outlet property="entryBodyTextView" destination="in5-Xi-zS7" id="Qyb-RN-89v"/>
+                        <outlet property="entryTextField" destination="ZtX-jH-LgO" id="V8f-P7-mvt"/>
+                        <outlet property="saveButton" destination="K1K-QY-Dwn" id="dsg-c1-PbU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XkJ-C0-FvC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,4 +150,7 @@
             <point key="canvasLocation" x="-876" y="143"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RTb-w2-hCz"/>
+    </inferredMetricsTieBreakers>
 </document>
